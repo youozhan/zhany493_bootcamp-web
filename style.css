@@ -18,7 +18,7 @@ body{
 }
 
 header{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #b6b6b6;
     display: flex;
     justify-content: space-between;
     padding: 25px;
@@ -44,6 +44,86 @@ nav ul li a{
 	text-decoration:none;
 } 
 
-.left-column, .right-column{
-    margin-left: 60px;
+.left-column {
+	width: 10vw;
+	margin-left: 5vw;
+	margin-top: 10px;
+	color: black;
+	/* border: 2px dashed #000; */
+	padding: 25px; 
+	position: fixed;
+	float: left;
+	z-index: 1;
+}
+
+.right-column {
+	width: 70vw;
+	height: calc(100vh - 90px);
+	margin-top: 10px;
+	margin-right: 5vw;
+	padding-left: 5vw;
+	color: white;
+	/* border: 2px solid #000; */
+	border-left: 1px solid #b6b6b6;
+	float: right;
+	display: flex;	
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+	z-index: -1;
+}
+
+.box {
+	position: relative;
+	display: inline-block;
+	font-size: .8em;
+	margin: 20px; 
+	animation: 1s ease-in-out 0s 1 slide-in;
+}
+
+.img-overlay {
+	position: absolute;
+	padding: 0;
+	opacity: 0;
+	height: 100%; 
+	width: 100%;
+	background: linear-gradient(45deg,rgba(71,201,229,0.9) 0,rgba(102,252,218,0.9) 100%);
+	transition: .5s all ease-in-out;
+}
+
+.box:hover .img-overlay {
+	opacity: 1;
+}
+
+.box .img-overlay h3 {
+	margin-top: 30%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.box .img-tile {
+	width: 240px;
+	height: 160px;
+}
+
+ .box:hover .img-tile {
+	zoom: 1.5;
+} 
+
+#blog-links {
+	list-style: none;
+	text-decoration: none;
+	padding: 0;
+	/* width:20vw; */
+}
+
+#blog-links li{
+	text-align: center;
+	line-height: 30px;
+}
+
+@keyframes slide-in {
+	0% {transform: translateY(300%)}
+	100% {transform: translateY(0%)}
 }
