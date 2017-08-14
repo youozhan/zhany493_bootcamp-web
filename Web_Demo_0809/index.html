@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="popup">
+
+        <div id="close"></div>
+        <div id="left" class="direction" onclick="change(-1)">
+            <img class="icon-nav" src="arrow_left.png">
+            <!-- &#8678; -->
+        </div>
+        <div id="right" class="direction" onclick="change(1)">
+            <img class="icon-nav" src="arrow_right.png">
+            <!-- &#8680; -->
+        </div>
+
+        <div id="pic-container">
+            <img id="pic" />
+        </div>
+    </div>
+
+    <div id="gallery">
+        <!--You can put as many columns as you want here-->
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
