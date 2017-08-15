@@ -119,7 +119,7 @@ section .section-title-toggle span.selected {
     z-index: -1;
 }
 
-#block .block-box {
+.block-box {
     height: 160px;
     width: 20vw;
     border: 1px dashed gray;
@@ -147,7 +147,7 @@ section .section-title-toggle span.selected {
     margin: 0;
 }
 
-#timeline .item {
+.item {
     position: relative;
     display: table;
     height: 100%;
@@ -156,7 +156,7 @@ section .section-title-toggle span.selected {
     /* margin-top: 5rem; */
 }
 
-#timeline .item div:after {
+.item div::after {
     content: '';
     width: 1px;
     position: absolute;
@@ -167,7 +167,7 @@ section .section-title-toggle span.selected {
     background-color: gray;
 }
 
-#timeline .item .bubble {
+.item .bubble {
     position: relative;
 }
 
@@ -177,13 +177,13 @@ section .section-title-toggle span.selected {
     padding-bottom: 0px;
 } */
 
-#timeline .item .bubble .year {
+.item .bubble .year {
     position: relative;
     padding-bottom: 1.25em;
     /* margin-bottom: 2.2em; */
 }
 
-#timeline .item .bubble .year h4 {
+.item .bubble .year h4 {
     position: absolute;
     bottom: 0;
     margin: 0;
@@ -191,7 +191,7 @@ section .section-title-toggle span.selected {
     font-weight: 300;
 }
 
-#timeline .item .bubble .year ul:first-of-type:after {
+.item .bubble .year ul:first-of-type:after {
     content: '';
     width: 10px;
     height: 10px;
@@ -207,11 +207,11 @@ section .section-title-toggle span.selected {
     z-index: 2;
 }
 
-#timeline .item .bubble .year ul:last-child {
+.item .bubble .year ul:last-child {
     margin-bottom: 0;
 }
 
-#timeline .item .bubble .year ul li {
+.item .bubble .year ul li {
     margin-left: 2rem;
 }
 
@@ -225,9 +225,29 @@ section .section-title-toggle span.selected {
 }
 
 .pie-box {
-    height: 80px;
-    width: 12vw;
-    border: 1px dashed gray;
+    height: auto;
+    width: auto;
+    /* border: 1px dashed gray; */
+}
+
+.pie-box .pie-viz {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: darkgray;
+    background-image: linear-gradient(to right, transparent 50%, gray 0);
+}
+
+.pie-box .pie-viz::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    transform: rotate(.2turn);
+    /* animation: spin 1s linear, bg 2s step-end; */
 }
 
 footer {
@@ -247,3 +267,16 @@ footer {
     background: transparent;
     /* make scrollbar transparent */
 }
+
+
+/* @keyframes spin {
+    to {
+        transform: rotate(.5turn);
+    }
+}
+
+@keyframes bg {
+    50% {
+        background: gray;
+    }
+} */
