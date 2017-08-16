@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Resume</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,9 +17,9 @@
             <div id="site-nav">
                 <nav>
                     <ul>
-                        <li><a href="#">Summary</a></li>
-                        <li><a href="#">Experience</a></li>
-                        <li><a href="#">Skillset</a></li>
+                        <li><a href="#summary">Summary</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skillset">Skillset</a></li>
                     </ul>
                 </nav>
 
@@ -42,7 +43,7 @@
             <div class="section-title">
                 <p class="section-title-text">Education/Experience</p>
                 <div class="section-title-toggle">
-                    <span class="selected">Timeline</span><span>Block</span>
+                    <span id="timeline-btn" class="selected">Timeline</span><span id="block-btn">Block</span>
                 </div>
             </div>
             <div id="block">
@@ -75,7 +76,7 @@
             <div id="timeline">
                 <div class="item">
                     <div>
-                        <div class="bubble">
+                        <div class="timeline-box">
                             <h3>2017</h3>
                             <div class="year">
                                 <h4>May</h4>
@@ -84,7 +85,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="bubble">
+                        <div class="timeline-box">
                             <h3>2016</h3>
                             <div class="year">
                                 <h4>January</h4>
@@ -93,7 +94,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="bubble">
+                        <div class="timeline-box">
                             <h3>2015</h3>
                             <div class="year">
                                 <h4>February</h4>
@@ -102,7 +103,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="bubble">
+                        <div class="timeline-box">
                             <h3>2014</h3>
                             <div class="year">
                                 <h4>May - August</h4>
@@ -111,7 +112,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="bubble">
+                        <div class="timeline-box">
                             <h3>2010</h3>
                             <div class="year">
                                 <h4>September</h4>
@@ -121,7 +122,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="bubble">
+                        <div class="timeline-box">
                             <h3>2006</h3>
                             <div class="year">
                                 <h4>August</h4>
@@ -140,30 +141,46 @@
             <div class="section-title">
                 <p class="section-title-text">Skillset</p>
                 <div class="section-title-toggle">
-                    <span class="selected">Pie</span><span>Bar</span>
+                    <span id="pie-btn" class="selected">Pie</span><span id="bar-btn">Bar</span>
                 </div>
             </div>
             <div id="pie">
                 <div class="pie-box">
                     <span>Viz 1</span>
-                    <div class="pie-viz">
+                    <div class="pie-viz" style="animation-delay: -.5s">
                     </div>
                 </div>
                 <div class="pie-box">
                     <span>Viz 2</span>
-                    <div class="pie-viz">
+                    <div class="pie-viz" style="animation-delay: -.8s">
                     </div>
                 </div>
                 <div class="pie-box">
                     <span>Viz 3</span>
-                    <div class="pie-viz">
+                    <div class="pie-viz" style="animation-delay: -.98s">
                     </div>
                 </div>
                 <div class="pie-box">
                     <span>Viz 4</span>
-                    <div class="pie-viz">
+                    <div class="pie-viz" style="animation-delay: -.8s">
                     </div>
                 </div>
+            </div>
+            <div id="bar">
+                <ul class="bar-box">
+                    <li>
+                        <span style="height:5%" title="Viz 1"></span>
+                    </li>
+                    <li>
+                        <span style="height:70%" title="Viz 2"></span>
+                    </li>
+                    <li>
+                        <span style="height:50%" title="Viz 3"></span>
+                    </li>
+                    <li>
+                        <span style="height:15%" title="Viz 4"></span>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
@@ -178,5 +195,6 @@
         <a href="http://www.instagram.com">Instagram</a>
     </p>
 </footer>
+<script src="js/main.js"></script>
 
 </html>

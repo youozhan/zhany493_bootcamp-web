@@ -11,6 +11,10 @@ body {
     padding: 0;
 }
 
+.hide {
+    display: none !important;
+}
+
 #wrap {
     width: 98vw;
     height: auto;
@@ -92,6 +96,10 @@ section .section-title-toggle {
     display: inline-block;
 }
 
+section .section-title-toggle {
+    cursor: pointer;
+}
+
 section .section-title-toggle span {
     padding: 6px;
 }
@@ -124,14 +132,18 @@ section .section-title-toggle span.selected {
     width: 20vw;
     border: 1px dashed gray;
     overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
 }
 
-
-/* .block-box p {
-    margin-bottom: 20px;
-    text-overflow: ellipsis;
+.block-box p {
+    /* max-height: 110px; */
     overflow: hidden;
-} */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
 
 #timeline {
     display: flex;
@@ -141,12 +153,6 @@ section .section-title-toggle span.selected {
     padding: 0rem 1rem 0rem 1rem;
 }
 
-#timeline h3 {
-    position: relative;
-    top: 2.3rem;
-    margin: 0;
-}
-
 .item {
     position: relative;
     display: table;
@@ -154,6 +160,12 @@ section .section-title-toggle span.selected {
     margin-left: auto;
     margin-right: auto;
     /* margin-top: 5rem; */
+}
+
+.item h3 {
+    position: sticky;
+    top: 0.3rem;
+    margin: 0;
 }
 
 .item div::after {
@@ -167,23 +179,23 @@ section .section-title-toggle span.selected {
     background-color: gray;
 }
 
-.item .bubble {
+.item .timeline-box {
     position: relative;
 }
 
 
-/* #timeline .item .bubble:first-child .year {
+/* .item .timeline-box:first-child .year {
     margin-top: -1.3em;
     padding-bottom: 0px;
 } */
 
-.item .bubble .year {
+.item .timeline-box .year {
     position: relative;
     padding-bottom: 1.25em;
-    /* margin-bottom: 2.2em; */
+    margin-bottom: 1.2em;
 }
 
-.item .bubble .year h4 {
+.item .timeline-box .year h4 {
     position: absolute;
     bottom: 0;
     margin: 0;
@@ -191,7 +203,7 @@ section .section-title-toggle span.selected {
     font-weight: 300;
 }
 
-.item .bubble .year ul:first-of-type:after {
+.item .timeline-box .year ul:first-of-type:after {
     content: '';
     width: 10px;
     height: 10px;
@@ -207,11 +219,11 @@ section .section-title-toggle span.selected {
     z-index: 2;
 }
 
-.item .bubble .year ul:last-child {
+.item .timeline-box .year ul:last-child {
     margin-bottom: 0;
 }
 
-.item .bubble .year ul li {
+.item .timeline-box .year ul li {
     margin-left: 2rem;
 }
 
@@ -227,14 +239,13 @@ section .section-title-toggle span.selected {
 .pie-box {
     height: auto;
     width: auto;
-    /* border: 1px dashed gray; */
 }
 
 .pie-box .pie-viz {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: darkgray;
+    background-color: lightgray;
     background-image: linear-gradient(to right, transparent 50%, gray 0);
 }
 
@@ -246,8 +257,51 @@ section .section-title-toggle span.selected {
     border-radius: 0 100% 100% 0 / 50%;
     background-color: inherit;
     transform-origin: left;
-    transform: rotate(.2turn);
-    /* animation: spin 1s linear, bg 2s step-end; */
+    animation: spin .5s linear infinite, bg 1s step-end infinite;
+    animation-play-state: paused;
+    animation-delay: inherit;
+}
+
+#bar {
+    display: none;
+}
+
+.bar-box {
+    display: table;
+    table-layout: fixed;
+    width: 60%;
+    max-width: 700px;
+    height: 200px;
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom, transparent 50%, lightgray 0);
+    background-size: 100% 50px;
+    background-position: left top;
+}
+
+.bar-box li {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 200px;
+}
+
+.bar-box li span {
+    margin: 0 1em;
+    display: block;
+    background: gray;
+    animation: draw 1s ease-in-out;
+}
+
+.bar-box li span::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 5px 1em 0;
+    display: block;
+    text-align: center;
+    content: attr(title);
+    word-wrap: break-word;
 }
 
 footer {
@@ -268,8 +322,7 @@ footer {
     /* make scrollbar transparent */
 }
 
-
-/* @keyframes spin {
+@keyframes spin {
     to {
         transform: rotate(.5turn);
     }
@@ -279,4 +332,10 @@ footer {
     50% {
         background: gray;
     }
-} */
+}
+
+@keyframes draw {
+    0% {
+        height: 0;
+    }
+}
