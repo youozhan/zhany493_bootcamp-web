@@ -34,3 +34,22 @@ $("#site-nav li a").click(function() {
         scrollTop: $(navLink.attr("href")).offset().top
     }, "slow")
 })
+
+WordCloud(document.getElementById("summary"), {
+    list: [
+        ['creative writing', 72],
+        ['social', 40],
+        ['media', 36],
+        ['marketing', 36],
+        ['web', 42],
+        ['fictional', 28],
+        ['imagination', 28],
+        ['video', 16],
+        ['digital', 16],
+        ['research', 10],
+        ['open-minded', 5],
+        ['original', 36],
+        ['html', 20],
+    ]
+
+});
